@@ -193,6 +193,111 @@
         {
             "name": "wo",
             "symbol": "を"
+        },
+
+        {
+            "name": "ga",
+            "symbol": "が"
+        },
+        {
+            "name": "gi",
+            "symbol": "ぎ"
+        },
+        {
+            "name": "gu",
+            "symbol": "ぐ"
+        },
+        {
+            "name": "ge",
+            "symbol": "げ"
+        },
+        {
+            "name": "go",
+            "symbol": "ご"
+        },
+
+        {
+            "name": "za",
+            "symbol": "ざ"
+        },
+        {
+            "name": "zi",
+            "symbol": "じ"
+        },
+        {
+            "name": "zu",
+            "symbol": "ず"
+        },
+        {
+            "name": "ze",
+            "symbol": "ぜ"
+        },
+        {
+            "name": "zo",
+            "symbol": "ぞ"
+        },
+
+        {
+            "name": "da",
+            "symbol": "だ"
+        },
+        {
+            "name": "di",
+            "symbol": "ぢ"
+        },
+        {
+            "name": "du",
+            "symbol": "づ"
+        },
+        {
+            "name": "de",
+            "symbol": "で"
+        },
+        {
+            "name": "do",
+            "symbol": "ど"
+        },
+
+        {
+            "name": "ba",
+            "symbol": "ば"
+        },
+        {
+            "name": "bi",
+            "symbol": "び"
+        },
+        {
+            "name": "bu",
+            "symbol": "ぶ"
+        },
+        {
+            "name": "be",
+            "symbol": "べ"
+        },
+        {
+            "name": "bo",
+            "symbol": "ぼ"
+        },
+
+        {
+            "name": "pa",
+            "symbol": "ぱ"
+        },
+        {
+            "name": "pi",
+            "symbol": "ぴ"
+        },
+        {
+            "name": "pu",
+            "symbol": "ぷ"
+        },
+        {
+            "name": "pe",
+            "symbol": "ぺ"
+        },
+        {
+            "name": "po",
+            "symbol": "ぽ"
         }
     ]
 }
