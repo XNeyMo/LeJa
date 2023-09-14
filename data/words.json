@@ -1,0 +1,84 @@
+{
+    "hiragana": [
+        { 
+            "vowels": [
+                {
+                    "latin": "a",
+                    "symbol": "あ",
+                    "meaning": "a"
+                },
+                {
+                    "latin": "i",
+                    "symbol": "い",
+                    "meaning": "i"
+                },
+                {
+                    "latin": "u",
+                    "symbol": "う",
+                    "meaning": "u"
+                },
+                {
+                    "latin": "e",
+                    "symbol": "え",
+                    "meaning": "e"
+                },
+                {
+                    "latin": "o",
+                    "symbol": "お",
+                    "meaning": "o"
+                },
+
+                {
+                    "latin": "ai",
+                    "symbol": "あい",
+                    "meaning": "Love"
+                },
+                {
+                    "latin": "ae",
+                    "symbol": "あえ",
+                    "meaning": "Meet up"
+                },
+                {
+                    "latin": "ao",
+                    "symbol": "あお",
+                    "meaning": "Blue"
+                },
+                {
+                    "latin": "aoi",
+                    "symbol": "あおい",
+                    "meaning": "Green"
+                },
+                {
+                    "latin": "aou",
+                    "symbol": "あおう",
+                    "meaning": "Put together"
+                },
+                {
+                    "latin": "aie",
+                    "symbol": "あいえ",
+                    "meaning": "Greeting"
+                },
+                {
+                    "latin": "aiou",
+                    "symbol": "あいおう",
+                    "meaning": "Coincidence"
+                },
+                {
+                    "latin": "aei",
+                    "symbol": "あえい",
+                    "meaning": "Call"
+                },
+                {
+                    "latin": "aioi",
+                    "symbol": "あいおい",
+                    "meaning": "Attraction"
+                },
+                {
+                    "latin": "aoe",
+                    "symbol": "あおえ",
+                    "meaning": "Praise"
+                }
+            ]
+        }
+    ]
+}
