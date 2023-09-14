@@ -298,6 +298,149 @@
         {
             "name": "po",
             "symbol": "ぽ"
+        },
+
+        {
+            "name": "kya",
+            "symbol": "きゃ"
+        },
+        {
+            "name": "kyu",
+            "symbol": "きゅ"
+        },
+        {
+            "name": "kyo",
+            "symbol": "きょ"
+        },
+
+        {
+            "name": "gya",
+            "symbol": "ぎゃ"
+        },
+        {
+            "name": "gyu",
+            "symbol": "ぎゅ"
+        },
+        {
+            "name": "gyo",
+            "symbol": "ぎょ"
+        },
+
+        {
+            "name": "sha",
+            "symbol": "しゃ"
+        },
+        {
+            "name": "shu",
+            "symbol": "しゅ"
+        },
+        {
+            "name": "sho",
+            "symbol": "しょ"
+        },
+
+        {
+            "name": "ja",
+            "symbol": "じゃ"
+        },
+        {
+            "name": "ju",
+            "symbol": "じゅ"
+        },
+        {
+            "name": "jo",
+            "symbol": "じょ"
+        },
+
+        {
+            "name": "cha",
+            "symbol": "ちゃ"
+        },
+        {
+            "name": "chu",
+            "symbol": "ちゅ"
+        },
+        {
+            "name": "cho",
+            "symbol": "ちょ"
+        },
+
+        {
+            "name": "nya",
+            "symbol": "にゃ"
+        },
+        {
+            "name": "nyu",
+            "symbol": "にゅ"
+        },
+        {
+            "name": "nyo",
+            "symbol": "にょ"
+        },
+
+        {
+            "name": "hya",
+            "symbol": "ひゃ"
+        },
+        {
+            "name": "hyu",
+            "symbol": "ひゅ"
+        },
+        {
+            "name": "hyo",
+            "symbol": "ひょ"
+        },
+
+        {
+            "name": "bya",
+            "symbol": "びゃ"
+        },
+        {
+            "name": "byu",
+            "symbol": "びゅ"
+        },
+        {
+            "name": "byo",
+            "symbol": "びょ"
+        },
+
+        {
+            "name": "pya",
+            "symbol": "ぴゃ"
+        },
+        {
+            "name": "pyu",
+            "symbol": "ぴゅ"
+        },
+        {
+            "name": "pyo",
+            "symbol": "ぴょ"
+        },
+
+        {
+            "name": "mya",
+            "symbol": "みゃ"
+        },
+        {
+            "name": "myu",
+            "symbol": "みゅ"
+        },
+        {
+            "name": "myo",
+            "symbol": "みょ"
+        },
+
+        {
+            "name": "rya",
+            "symbol": "りゃ"
+        },
+        {
+            "name": "ryu",
+            "symbol": "りゅ"
+        },
+        {
+            "name": "ryo",
+            "symbol": "りょ"
         }
     ]
 }
