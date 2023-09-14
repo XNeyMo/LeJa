@@ -1,0 +1,198 @@
+{
+    "hiragana": [
+        {
+            "name": "a",
+            "symbol": "あ"
+        },
+        {
+            "name": "i",
+            "symbol": "い"
+        },
+        {
+            "name": "u",
+            "symbol": "う"
+        },
+        {
+            "name": "e",
+            "symbol": "え"
+        },
+        {
+            "name": "o",
+            "symbol": "お"
+        },
+
+        {
+            "name": "ka",
+            "symbol": "か"
+        },
+        {
+            "name": "ki",
+            "symbol": "き"
+        },
+        {
+            "name": "ku",
+            "symbol": "く"
+        },
+        {
+            "name": "ke",
+            "symbol": "け"
+        },
+        {
+            "name": "ko",
+            "symbol": "こ"
+        },
+
+        {
+            "name": "sa",
+            "symbol": "さ"
+        },
+        {
+            "name": "shi",
+            "symbol": "し"
+        },
+        {
+            "name": "su",
+            "symbol": "す"
+        },
+        {
+            "name": "se",
+            "symbol": "せ"
+        },
+        {
+            "name": "so",
+            "symbol": "そ"
+        },
+
+        {
+            "name": "ta",
+            "symbol": "た"
+        },
+        {
+            "name": "chi",
+            "symbol": "ち"
+        },
+        {
+            "name": "tsu",
+            "symbol": "つ"
+        },
+        {
+            "name": "te",
+            "symbol": "て"
+        },
+        {
+            "name": "to",
+            "symbol": "と"
+        },
+
+        {
+            "name": "n",
+            "symbol": "ん"
+        },
+
+        {
+            "name": "na",
+            "symbol": "な"
+        },
+        {
+            "name": "ni",
+            "symbol": "に"
+        },
+        {
+            "name": "nu",
+            "symbol": "ぬ"
+        },
+        {
+            "name": "ne",
+            "symbol": "ね"
+        },
+        {
+            "name": "no",
+            "symbol": "の"
+        },
+
+        {
+            "name": "ha",
+            "symbol": "は"
+        },
+        {
+            "name": "hi",
+            "symbol": "ひ"
+        },
+        {
+            "name": "fu",
+            "symbol": "ふ"
+        },
+        {
+            "name": "he",
+            "symbol": "へ"
+        },
+        {
+            "name": "ho",
+            "symbol": "ほ"
+        },
+
+        {
+            "name": "ma",
+            "symbol": "ま"
+        },
+        {
+            "name": "mi",
+            "symbol": "み"
+        },
+        {
+            "name": "mu",
+            "symbol": "む"
+        },
+        {
+            "name": "me",
+            "symbol": "め"
+        },
+        {
+            "name": "mo",
+            "symbol": "も"
+        },
+
+        {
+            "name": "ya",
+            "symbol": "や"
+        },
+        {
+            "name": "yu",
+            "symbol": "ゆ"
+        },
+        {
+            "name": "yo",
+            "symbol": "よ"
+        },
+
+        {
+            "name": "ra",
+            "symbol": "ら"
+        },
+        {
+            "name": "ri",
+            "symbol": "り"
+        },
+        {
+            "name": "ru",
+            "symbol": "る"
+        },
+        {
+            "name": "re",
+            "symbol": "れ"
+        },
+        {
+            "name": "ro",
+            "symbol": "ろ"
+        },
+
+        {
+            "name": "wa",
+            "symbol": "わ"
+        },
+        {
+            "name": "wo",
+            "symbol": "を"
+        }
+    ]
+}
