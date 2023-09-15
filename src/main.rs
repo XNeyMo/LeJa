@@ -7,7 +7,7 @@ use std::process;
 #[derive(Debug, Deserialize, Serialize)]
 struct Word {
     latin: String,
-    symbol: String,
+    character: String,
     meaning: String,
 }
 
@@ -125,7 +125,7 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
                                 if option_word == 1 {
                                     println!("\nWhat's the symbol of '{}' word", word.latin);
                                 } else {
-                                    println!("\nWhat's the Latin of '{}' symbol", word.symbol);
+                                    println!("\nWhat's the Latin of '{}' symbol", word.character);
                                 }
 
                                 if option_word == 1 {
@@ -139,7 +139,7 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
                                 let input = input.trim().to_string();
 
                                 if option_word == 1 {
-                                    println!("\nSymbol: {}", word.symbol);
+                                    println!("\nSymbol: {}", word.character);
                                     println!("Meaning: {}", word.meaning);
                                 } else {
                                     if input == word.latin {

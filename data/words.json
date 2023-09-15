@@ -4,52 +4,554 @@
             "group": "Vowels",
             "words": [
                 {
-                    "latin": "a",
-                    "symbol": "あ",
-                    "meaning": "a"
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
                 }
             ]
         },
         {
-            "group": "K",
+            "group": "K and Previous",
             "words": [
                 {
-                    "latin": "ka",
-                    "symbol": "か",
-                    "meaning": "ka"
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "S and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "T and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "N and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "H and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "M and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "Y and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "R and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "W and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "G and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "Z and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "D and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "B and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "P and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "W and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "KY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "GY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "SH and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "J and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "CH and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "NY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "HY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "BY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "PY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "MY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "RY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
                 }
             ]
         }
     ],
+
     "katakana": [
         {
             "group": "Vowels",
             "words": [
                 {
-                    "latin": "a",
-                    "symbol": "ア",
-                    "meaning": "a"
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
                 }
             ]
         },
         {
-            "group": "K",
+            "group": "K and Previous",
             "words": [
                 {
-                    "latin": "ka",
-                    "symbol": "カ",
-                    "meaning": "ka"
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "S and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "T and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "N and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "H and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "M and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "Y and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "R and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "W and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "G and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "Z and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "D and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "B and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "P and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "W and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "KY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "GY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "SH and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "J and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "CH and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "NY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "HY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "BY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "PY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "MY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "RY and Previous",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
                 }
             ]
         }
     ],
+
     "kanji": [
         {
             "group": "N5",
             "words": [
                 {
                     "latin": "hito",
-                    "symbol": "人",
+                    "character": "人",
                     "meaning": "Person"
                 }
             ]
@@ -59,8 +561,38 @@
             "words": [
                 {
                     "latin": "kai",
-                    "symbol": "手",
+                    "character": "手",
                     "meaning": "Hand"
+                }
+            ]
+        },
+        {
+            "group": "N3",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "N2",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
+                }
+            ]
+        },
+        {
+            "group": "N1",
+            "words": [
+                {
+                    "latin": "",
+                    "character": "",
+                    "meaning": ""
                 }
             ]
         }
