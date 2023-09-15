@@ -1,4 +1,25 @@
-use std::io;
+use std::io::{self, Read};
+use serde::{Deserialize, Serialize};
+use std::fs::File;
+use rand::seq::SliceRandom;
+
+#[derive(Debug, Deserialize, Serialize)]
+struct Word {
+    latin: String,
+    symbol: String,
+    meaning: String,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct HiraganaGroup {
+    vowels: Option<Vec<Word>>,
+    k: Option<Vec<Word>>,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct HiraganaData {
+    hiragana: Vec<HiraganaGroup>,
+}
 
 fn main() {
     loop {
@@ -71,6 +92,31 @@ fn learn_hiragana() {
 }
 
 fn h_gojūon() {
+    let file_path = "data/words.json";
+
+    let mut file = match File::open(file_path) {
+        Ok(file) => file,
+        Err(_) => {
+            println!("Error opening the JSON file");
+            return;
+        }
+    };
+
+    let mut json_data = String::new();
+    if file.read_to_string(&mut json_data).is_err() {
+        println!("Error reading the JSON file");
+        return;
+    }
+
+
+    let hiragana_data: HiraganaData = match serde_json::from_str(&json_data) {
+        Ok(data) => data,
+        Err(_) => {
+            println!("Error parsing JSON data");
+            return;
+        }
+    };
+
     loop {
         println!("\n= = = = = = = = Hiragana Gojūon = = = = = = = =");
 
@@ -100,8 +146,68 @@ fn h_gojūon() {
         };
 
         match option {
-            1 => {}
-            2 => {}
+            1 => {
+                if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
+                    if !words.is_empty() {
+                        if let Some(word) = words.choose(&mut rand::thread_rng()) {
+                            println!("\nRandom latin: {}", word.latin);
+                
+                            println!("\nType 'finished' when you're ready to see the result:");
+                            let mut input: String = String::new();
+                            io::stdin().read_line(&mut input).expect("Error Reading");
+                
+                            if input.trim() != "finished" {
+                                println!("\nInvalid input. Try again");
+                                continue;
+                            }
+                
+                            println!("\nSymbol: {}", word.symbol);
+                            println!("Meaning: {}", word.meaning);
+                        } 
+                        
+                        else {
+                            println!("\nNo words available in the 'vowels' vector");
+                        }
+                    } 
+                    
+                    else {
+                        println!("\n'vowels' vector is empty");
+                    }
+                } 
+                
+                else {
+                    println!("\nNo 'vowels' available");
+                }
+            }
+
+            2 => {
+                if let Some(ref words) = hiragana_data.hiragana[1].k.as_ref() {
+                    if !words.is_empty() {
+                        if let Some(word) = words.choose(&mut rand::thread_rng()) {
+                            println!("\nRandom latin: {}", word.latin);
+                            
+                            println!("\nType 'finished' when you're ready to see the result:");
+                            let mut input: String = String::new();
+                            io::stdin().read_line(&mut input).expect("Error Reading");
+                            
+                            if input.trim() != "finished" {
+                                println!("\nInvalid input. Try again");
+                                continue;
+                            }
+                            
+                            println!("\nSymbol: {}", word.symbol);
+                            println!("Meaning: {}", word.meaning);
+                        } else {
+                            println!("\nNo words available in the 'k' vector");
+                        }
+                    } else {
+                        println!("\n'k' vector is empty");
+                    }
+                } else {
+                    println!("\nNo 'k' available");
+                }
+            }            
+
             3 => {}
             4 => {}
             5 => {}

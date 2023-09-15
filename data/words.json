@@ -79,6 +79,16 @@
                     "meaning": "Praise"
                 }
             ]
+        },
+
+        {
+            "k": [
+                {
+                    "latin": "ka",
+                    "symbol": "か",
+                    "meaning": "ka"
+                }
+            ]
         }
     ]
 }
