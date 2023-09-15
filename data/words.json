@@ -11,7 +11,7 @@
             ]
         },
         {
-            "group": "K and Previous",
+            "group": "K/G and Previous",
             "words": [
                 {
                     "latin": "",
@@ -21,7 +21,7 @@
             ]
         },
         {
-            "group": "S and Previous",
+            "group": "S/Z and Previous",
             "words": [
                 {
                     "latin": "",
@@ -31,7 +31,7 @@
             ]
         },
         {
-            "group": "T and Previous",
+            "group": "T/D and Previous",
             "words": [
                 {
                     "latin": "",
@@ -51,7 +51,7 @@
             ]
         },
         {
-            "group": "H and Previous",
+            "group": "H/B/P and Previous",
             "words": [
                 {
                     "latin": "",
@@ -82,66 +82,6 @@
         },
         {
             "group": "R and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "W and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "G and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "Z and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "D and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "B and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "P and Previous",
             "words": [
                 {
                     "latin": "",
@@ -284,7 +224,7 @@
             ]
         },
         {
-            "group": "K and Previous",
+            "group": "K/G and Previous",
             "words": [
                 {
                     "latin": "",
@@ -294,7 +234,7 @@
             ]
         },
         {
-            "group": "S and Previous",
+            "group": "S/Z and Previous",
             "words": [
                 {
                     "latin": "",
@@ -304,7 +244,7 @@
             ]
         },
         {
-            "group": "T and Previous",
+            "group": "T/D and Previous",
             "words": [
                 {
                     "latin": "",
@@ -324,7 +264,7 @@
             ]
         },
         {
-            "group": "H and Previous",
+            "group": "H/B/P and Previous",
             "words": [
                 {
                     "latin": "",
@@ -355,66 +295,6 @@
         },
         {
             "group": "R and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "W and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "G and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "Z and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "D and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "B and Previous",
-            "words": [
-                {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
-                }
-            ]
-        },
-        {
-            "group": "P and Previous",
             "words": [
                 {
                     "latin": "",
