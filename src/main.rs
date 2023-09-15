@@ -90,15 +90,15 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
         println!("4. Exit.");
 
         println!("\nEnter the option number of how you want the word to be given to you:");
-        let option: usize = match read_user_input() {
-            Ok(option) => option,
+        let option_word: usize = match read_user_input() {
+            Ok(option_word) => option_word,
             Err(_) => {
                 println!("\nInvalid option. Try again");
                 continue;
             }
         };
 
-        match option {
+        match option_word {
             1 | 2 => {
                 let selected_group = select_group(&group_names, group_name);
 
@@ -122,22 +122,32 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
                     match option {
                         1 => {
                             if let Some(word) = select_random_word(groups, selected_group) {
-                                if option == 1 {
+                                if option_word == 1 {
                                     println!("\nWhat's the symbol of '{}' word", word.latin);
                                 } else {
                                     println!("\nWhat's the Latin of '{}' symbol", word.symbol);
                                 }
 
-                                println!("\nPress 'Enter' when you're done:");
+                                if option_word == 1 {
+                                    println!("\nPress 'Enter' when you're done:");
+                                } else {
+                                    println!("\nEnter the word Latin:");
+                                }
+
                                 let mut input = String::new();
                                 io::stdin().read_line(&mut input).unwrap();
+                                let input = input.trim().to_string();
 
-                                if option == 1 {
-                                    println!("Symbol: {}", word.symbol);
+                                if option_word == 1 {
+                                    println!("\nSymbol: {}", word.symbol);
                                     println!("Meaning: {}", word.meaning);
                                 } else {
-                                    println!("Latin: {}", word.latin);
-                                    println!("Meaning: {}", word.meaning);
+                                    if input == word.latin {
+                                        println!("\nCorrect. The meaning: {}", word.meaning);
+                                    } else {
+                                        println!("\nIncorrect answer. The correct is: {}", word.latin);
+                                        println!("Meaning: {}", word.meaning);
+                                    }
                                 }
                             } else {
                                 println!("\nNo words in the selected group.");
@@ -190,9 +200,7 @@ fn select_group<'a>(group_names: &'a Vec<&'a str>, name: &'a str) -> &'a str {
 
         if option >= 1 && option <= group_names.len() {
             return group_names[option - 1];
-        } 
-        
-        else {
+        } else {
             println!("\nInvalid option. Try again");
         }
     }
