@@ -54,9 +54,54 @@
             "group": "K/G and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "kai",
+                    "character": "かい",
+                    "meaning": "Shellfish"
+                },
+                {
+                    "latin": "kiku",
+                    "character": "きく",
+                    "meaning": "Listen"
+                },
+                {
+                    "latin": "ookii",
+                    "character": "おおきい",
+                    "meaning": "Big"
+                },
+                {
+                    "latin": "koukou",
+                    "character": "こうこう",
+                    "meaning": "High School"
+                },
+                {
+                    "latin": "akai",
+                    "character": "あかい",
+                    "meaning": "Red"
+                },
+                {
+                    "latin": "aki",
+                    "character": "あき",
+                    "meaning": "Autumn"
+                },
+                {
+                    "latin": "kau",
+                    "character": "かう",
+                    "meaning": "Buy"
+                },
+                {
+                    "latin": "eiga",
+                    "character": "えいが",
+                    "meaning": "Movie"
+                },
+                {
+                    "latin": "kagi",
+                    "character": "かぎ",
+                    "meaning": "Key"
+                },
+                {
+                    "latin": "gogo",
+                    "character": "ごご",
+                    "meaning": "Afternoon"
                 }
             ]
         },
