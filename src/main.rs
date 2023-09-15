@@ -119,7 +119,7 @@ fn select_practice_option(group_name: &str) -> u32 {
         println!("3. Previous menu");
         println!("4. Exit.");
 
-        println!("\nEnter the option number:");
+        println!("\nEnter the option number of how you want the word to be given to you:");
         let mut option = String::new();
         io::stdin().read_line(&mut option).unwrap();
 
@@ -133,7 +133,9 @@ fn select_practice_option(group_name: &str) -> u32 {
 
         if option >= 1 && option <= 4 {
             return option;
-        } else {
+        } 
+        
+        else {
             println!("\nInvalid option. Try again");
         }
     }
@@ -141,14 +143,16 @@ fn select_practice_option(group_name: &str) -> u32 {
 
 fn select_group<'a>(group_names: &'a Vec<&'a str>) -> &'a str {
     loop {
-        println!("\nSelect a group:");
+        println!("\n= = = = = = = = Groups = = = = = = = =\n");
 
         for (index, group) in group_names.iter().enumerate() {
             println!("{}. {}", index + 1, group);
         }
 
+        println!("\nEnter the number of the group you want to practice:");
         let mut option = String::new();
         io::stdin().read_line(&mut option).unwrap();
+
         let option: usize = match option.trim().parse() {
             Ok(option) => option,
             Err(_) => {
@@ -159,7 +163,9 @@ fn select_group<'a>(group_names: &'a Vec<&'a str>) -> &'a str {
 
         if option >= 1 && option <= group_names.len() {
             return group_names[option - 1];
-        } else {
+        } 
+        
+        else {
             println!("\nInvalid option. Try again");
         }
     }
@@ -182,11 +188,12 @@ fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32)
 
     match practice_option {
         1 => {
-            // Latin word practice
             let selected_group = select_group(&group_names);
+
             if let Some(word) = select_random_word(hiragana_groups, selected_group) {
                 println!("\nWhat's the symbol of '{}' word", word.latin);
-                println!("Enter 'finished' when you have finished");
+
+                println!("\nEnter 'finished' when you're done:");
 
                 loop {
                     let mut input = String::new();
@@ -201,16 +208,20 @@ fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32)
                         println!("Incorrect. Try again or enter 'finished' to exit.");
                     }
                 }
-            } else {
+            } 
+            
+            else {
                 println!("\nNo words in the selected group.");
             }
         }
+        
         2 => {
-            // Symbol word practice
             let selected_group = select_group(&group_names);
+
             if let Some(word) = select_random_word(hiragana_groups, selected_group) {
                 println!("\nWhat's the Latin of '{}' symbol", word.symbol);
-                println!("Enter 'finished' when you have finished");
+
+                println!("\nEnter 'finished' when you're done:");
 
                 loop {
                     let mut input = String::new();
@@ -225,16 +236,21 @@ fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32)
                         println!("Incorrect. Try again or enter 'finished' to exit.");
                     }
                 }
-            } else {
+            } 
+            
+            else {
                 println!("\nNo words in the selected group.");
             }
         }
+
         3 => {
-            // Previous menu
+
         }
+
         4 => {
-            // Exit
+            
         }
+
         _ => println!("\nInvalid option. Try again"),
     }
 }
