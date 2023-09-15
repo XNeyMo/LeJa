@@ -139,7 +139,7 @@ fn select_practice_option(group_name: &str) -> u32 {
     }
 }
 
-fn select_group(group_names: &Vec<&str>) -> &str {
+fn select_group<'a>(group_names: &'a Vec<&'a str>) -> &'a str {
     loop {
         println!("\nSelect a group:");
 
@@ -165,7 +165,7 @@ fn select_group(group_names: &Vec<&str>) -> &str {
     }
 }
 
-fn select_random_word(groups: &Vec<JapaneseGroup>, group_name: &str) -> Option<&Word> {
+fn select_random_word<'a>(groups: &'a Vec<JapaneseGroup>, group_name: &'a str) -> Option<&'a Word> {
     let group = groups.iter().find(|group| group.group == group_name)?;
 
     let words = &group.words;
@@ -178,7 +178,7 @@ fn select_random_word(groups: &Vec<JapaneseGroup>, group_name: &str) -> Option<&
 }
 
 fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32) {
-    let group_names: Vec<&str> = hiragana_groups.iter().map(|group| &group.group).collect();
+    let group_names: Vec<&str> = hiragana_groups.iter().map(|group| group.group.as_str()).collect();
 
     match practice_option {
         1 => {
