@@ -147,64 +147,144 @@ fn h_gojūon() {
 
         match option {
             1 => {
-                if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
-                    if !words.is_empty() {
-                        if let Some(word) = words.choose(&mut rand::thread_rng()) {
-                            println!("\nRandom latin: {}", word.latin);
-                
-                            println!("\nType 'finished' when you're ready to see the result:");
-                            let mut input: String = String::new();
-                            io::stdin().read_line(&mut input).expect("Error Reading");
-                
-                            if input.trim() != "finished" {
-                                println!("\nInvalid input. Try again");
-                                continue;
-                            }
-                
-                            println!("\nSymbol: {}", word.symbol);
-                            println!("Meaning: {}", word.meaning);
-                        } 
-                        
-                        else {
-                            println!("\nNo words available in the 'vowels' vector");
+                let mut shown_words: Vec<usize> = Vec::new(); // Para mantener un registro de los índices de las palabras mostradas
+            
+                loop {
+                    println!("\n1. Word");
+                    println!("2. Gojūon Menu");
+            
+                    println!("\nEnter the option number of what you want to do:");
+                    let mut option = String::new();
+                    io::stdin().read_line(&mut option).expect("Error Reading");
+            
+                    let option: u32 = match option.trim().parse() {
+                        Ok(option) => option,
+                        Err(_) => {
+                            println!("\nInvalid option.");
+                            continue;
                         }
-                    } 
-                    
-                    else {
-                        println!("\n'vowels' vector is empty");
+                    };
+            
+                    match option {
+                        1 => {
+                            if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
+                                if !words.is_empty() {
+                                    let available_indices: Vec<usize> = (0..words.len())
+                                        .filter(|&idx| !shown_words.contains(&idx))
+                                        .collect();
+            
+                                    if available_indices.is_empty() {
+                                        println!("\nNo more words available.");
+                                        break;
+                                    }
+            
+                                    let selected_idx = available_indices
+                                        .choose(&mut rand::thread_rng())
+                                        .expect("No available indices");
+            
+                                    let word = &words[*selected_idx];
+                                    shown_words.push(*selected_idx);
+            
+                                    println!("\nRandom latin: {}", word.latin);
+            
+                                    println!("\nType 'finished' when you're ready to see the result:");
+                                    let mut input = String::new();
+                                    io::stdin().read_line(&mut input).expect("Error Reading");
+            
+                                    if input.trim() != "finished" {
+                                        println!("\nInvalid input. Try again");
+                                        continue;
+                                    }
+            
+                                    println!("\nSymbol: {}", word.symbol);
+                                    println!("Meaning: {}", word.meaning);
+                                } else {
+                                    println!("\n'vowels' vector is empty");
+                                    break;
+                                }
+                            } else {
+                                println!("\nNo 'vowels' available");
+                                break;
+                            }
+                        }
+            
+                        2 => break,
+                        _ => {
+                            println!("\nInvalid option.");
+                            continue;
+                        }
                     }
-                } 
-                
-                else {
-                    println!("\nNo 'vowels' available");
                 }
-            }
+            }            
 
             2 => {
-                if let Some(ref words) = hiragana_data.hiragana[1].k.as_ref() {
-                    if !words.is_empty() {
-                        if let Some(word) = words.choose(&mut rand::thread_rng()) {
-                            println!("\nRandom latin: {}", word.latin);
-                            
-                            println!("\nType 'finished' when you're ready to see the result:");
-                            let mut input: String = String::new();
-                            io::stdin().read_line(&mut input).expect("Error Reading");
-                            
-                            if input.trim() != "finished" {
-                                println!("\nInvalid input. Try again");
-                                continue;
-                            }
-                            
-                            println!("\nSymbol: {}", word.symbol);
-                            println!("Meaning: {}", word.meaning);
-                        } else {
-                            println!("\nNo words available in the 'k' vector");
+                let mut shown_words: Vec<usize> = Vec::new(); // Para mantener un registro de los índices de las palabras mostradas
+            
+                loop {
+                    println!("\n1. Word");
+                    println!("2. Gojūon Menu");
+            
+                    println!("\nEnter the option number of what you want to do:");
+                    let mut option = String::new();
+                    io::stdin().read_line(&mut option).expect("Error Reading");
+            
+                    let option: u32 = match option.trim().parse() {
+                        Ok(option) => option,
+                        Err(_) => {
+                            println!("\nInvalid option.");
+                            continue;
                         }
-                    } else {
-                        println!("\n'k' vector is empty");
+                    };
+            
+                    match option {
+                        1 => {
+                            if let Some(ref words) = hiragana_data.hiragana[1].k.as_ref() {
+                                if !words.is_empty() {
+                                    let available_indices: Vec<usize> = (0..words.len())
+                                        .filter(|&idx| !shown_words.contains(&idx))
+                                        .collect();
+            
+                                    if available_indices.is_empty() {
+                                        println!("\nNo more words available.");
+                                        break;
+                                    }
+            
+                                    let selected_idx = available_indices
+                                        .choose(&mut rand::thread_rng())
+                                        .expect("No available indices");
+            
+                                    let word = &words[*selected_idx];
+                                    shown_words.push(*selected_idx);
+            
+                                    println!("\nRandom latin: {}", word.latin);
+            
+                                    println!("\nType 'finished' when you're ready to see the result:");
+                                    let mut input = String::new();
+                                    io::stdin().read_line(&mut input).expect("Error Reading");
+            
+                                    if input.trim() != "finished" {
+                                        println!("\nInvalid input. Try again");
+                                        continue;
+                                    }
+            
+                                    println!("\nSymbol: {}", word.symbol);
+                                    println!("Meaning: {}", word.meaning);
+                                } else {
+                                    println!("\n'vowels' vector is empty");
+                                    break;
+                                }
+                            } else {
+                                println!("\nNo 'vowels' available");
+                                break;
+                            }
+                        }
+            
+                        2 => break,
+                        _ => {
+                            println!("\nInvalid option.");
+                            continue;
+                        }
                     }
-                } else {
-                    println!("\nNo 'k' available");
                 }
             }            
 
