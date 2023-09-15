@@ -4,9 +4,49 @@
             "group": "Vowels",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "ii",
+                    "character": "いい",
+                    "meaning": "Good"
+                },
+                {
+                    "latin": "ue",
+                    "character": "うえ",
+                    "meaning": "Up"
+                },
+                {
+                    "latin": "ou",
+                    "character": "おう",
+                    "meaning": "King"
+                },
+                {
+                    "latin": "ai",
+                    "character": "あい",
+                    "meaning": "Love"
+                },
+                {
+                    "latin": "ie",
+                    "character": "いえ",
+                    "meaning": "Home"
+                },
+                {
+                    "latin": "iie",
+                    "character": "いいえ",
+                    "meaning": "No"
+                },
+                {
+                    "latin": "ooi",
+                    "character": "おおい",
+                    "meaning": "Many"
+                },
+                {
+                    "latin": "iu",
+                    "character": "いう",
+                    "meaning": "Say"
+                },
+                {
+                    "latin": "au",
+                    "character": "あう",
+                    "meaning": "Meeting - Meet"
                 }
             ]
         },
