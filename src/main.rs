@@ -2,6 +2,7 @@ use serde::{Deserialize, Serialize};
 use std::fs::File;
 use std::io::{self, Read};
 use rand::seq::SliceRandom;
+use std::process;
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Word {
@@ -94,7 +95,7 @@ fn main() {
                     practice_kanji(&kanji_groups, practice_option);
                 }
 
-                4 => break,
+                4 => process::exit(0),
                 
                 _ => {
                     println!("\nInvalid option. Try again");
@@ -141,9 +142,9 @@ fn select_practice_option(group_name: &str) -> u32 {
     }
 }
 
-fn select_group<'a>(group_names: &'a Vec<&'a str>) -> &'a str {
+fn select_group<'a>(group_names: &'a Vec<&'a str>, name: &'a str) -> &'a str {
     loop {
-        println!("\n= = = = = = = = Groups = = = = = = = =\n");
+        println!("\n= = = = = = = = {} Groups = = = = = = = =\n", name);
 
         for (index, group) in group_names.iter().enumerate() {
             println!("{}. {}", index + 1, group);
@@ -187,70 +188,81 @@ fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32)
     let group_names: Vec<&str> = hiragana_groups.iter().map(|group| group.group.as_str()).collect();
 
     match practice_option {
-        1 => {
-            let selected_group = select_group(&group_names);
+        1 | 2 => {
+            let selected_group = select_group(&group_names, "Hiragana");
 
-            if let Some(word) = select_random_word(hiragana_groups, selected_group) {
-                println!("\nWhat's the symbol of '{}' word", word.latin);
+            loop {
+                println!("\n= = = = = = = = Hiragana Word Option = = = = = = = =");
 
-                println!("\nEnter 'finished' when you're done:");
+                println!("\n1. Get word");
+                println!("2. Select Group");
+                println!("3. Hiragana Menu");
 
-                loop {
-                    let mut input = String::new();
-                    io::stdin().read_line(&mut input).unwrap();
-                    let input = input.trim();
+                println!("\nEnter the option number of what you want:");
+                let mut option = String::new();
+                io::stdin().read_line(&mut option).unwrap();
 
-                    if input == "finished" {
-                        println!("\nSymbol: {}", word.symbol);
-                        println!("Meaning: {}", word.meaning);
-                        break;
-                    } else {
-                        println!("Incorrect. Try again or enter 'finished' to exit.");
+                let option: u32 = match option.trim().parse() {
+                    Ok(option) => option,
+                    Err(_) => {
+                        println!("\nInvalid option");
+                        continue;
+                    }
+                };
+
+                match option {
+                    1 => {
+                        if let Some(word) = select_random_word(hiragana_groups, selected_group) {
+                            if practice_option == 1 {
+                                println!("\nWhat's the symbol of '{}' word", word.latin);
+                            } 
+                                
+                            else {
+                                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
+                            }
+            
+                            println!("\nPress 'Enter' when you're done:");
+                            let mut input = String::new();
+                            io::stdin().read_line(&mut input).unwrap();
+            
+                            if practice_option == 1 {
+                                println!("Symbol: {}", word.symbol);
+                                println!("Meaning: {}", word.meaning);
+                            } 
+                            
+                            else {
+                                println!("Latin: {}", word.latin);
+                                println!("Meaning: {}", word.meaning);
+                            }
+                        }
+                            
+                        else {
+                            println!("\nNo words in the selected group.");
+                        }
+                    }
+
+                    2 => {
+                        select_group(&group_names, "Hiragana");
+                    }
+
+                    3 => {
+                        let practice_option = select_practice_option("Hiragana");
+                        practice_hiragana(&hiragana_groups, practice_option);
+                    }
+
+                    _ => {
+                        println!("\nInvalid option");
+                        continue;
                     }
                 }
-            } 
-            
-            else {
-                println!("\nNo words in the selected group.");
-            }
-        }
-        
-        2 => {
-            let selected_group = select_group(&group_names);
-
-            if let Some(word) = select_random_word(hiragana_groups, selected_group) {
-                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
-
-                println!("\nEnter 'finished' when you're done:");
-
-                loop {
-                    let mut input = String::new();
-                    io::stdin().read_line(&mut input).unwrap();
-                    let input = input.trim();
-
-                    if input == "finished" {
-                        println!("\nLatin: {}", word.latin);
-                        println!("Meaning: {}", word.meaning);
-                        break;
-                    } else {
-                        println!("Incorrect. Try again or enter 'finished' to exit.");
-                    }
-                }
-            } 
-            
-            else {
-                println!("\nNo words in the selected group.");
             }
         }
 
         3 => {
-
+            main();
         }
 
-        4 => {
-            
-        }
-
+        4 => {}
         _ => println!("\nInvalid option. Try again"),
     }
 }

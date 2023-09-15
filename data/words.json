@@ -1,7 +1,7 @@
 {
     "hiragana": [
         {
-            "group": "vowels",
+            "group": "Vowels",
             "words": [
                 {
                     "latin": "a",
@@ -11,7 +11,7 @@
             ]
         },
         {
-            "group": "k",
+            "group": "K",
             "words": [
                 {
                     "latin": "ka",
@@ -23,7 +23,7 @@
     ],
     "katakana": [
         {
-            "group": "vowels",
+            "group": "Vowels",
             "words": [
                 {
                     "latin": "a",
@@ -33,7 +33,7 @@
             ]
         },
         {
-            "group": "k",
+            "group": "K",
             "words": [
                 {
                     "latin": "ka",
@@ -45,7 +45,7 @@
     ],
     "kanji": [
         {
-            "group": "n5",
+            "group": "N5",
             "words": [
                 {
                     "latin": "hito",
@@ -55,7 +55,7 @@
             ]
         },
         {
-            "group": "n4",
+            "group": "N4",
             "words": [
                 {
                     "latin": "kai",
