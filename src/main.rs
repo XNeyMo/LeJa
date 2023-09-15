@@ -1,7 +1,7 @@
-use std::io::{self, Read};
+use rand::seq::SliceRandom;
 use serde::{Deserialize, Serialize};
 use std::fs::File;
-use rand::seq::SliceRandom;
+use std::io::{self, Read};
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Word {
@@ -108,7 +108,6 @@ fn h_gojūon() {
         return;
     }
 
-
     let hiragana_data: HiraganaData = match serde_json::from_str(&json_data) {
         Ok(data) => data,
         Err(_) => {
@@ -132,7 +131,6 @@ fn h_gojūon() {
         println!("10. Previous and w + (vowels)");
         println!("11. Hiragana Menu");
 
-
         println!("\nEnter the option number of what you want to learn:");
         let mut option = String::new();
         io::stdin().read_line(&mut option).expect("Error Reading");
@@ -147,16 +145,15 @@ fn h_gojūon() {
 
         match option {
             1 => {
-                let mut shown_words: Vec<usize> = Vec::new(); // Para mantener un registro de los índices de las palabras mostradas
-            
                 loop {
-                    println!("\n1. Word");
-                    println!("2. Gojūon Menu");
-            
-                    println!("\nEnter the option number of what you want to do:");
+                    println!("\n1. Latin Word");
+                    println!("2. Japanese Word");
+                    println!("3. Gojūon Menu");
+
+                    println!("\nEnter the option number of how you want to learn:");
                     let mut option = String::new();
                     io::stdin().read_line(&mut option).expect("Error Reading");
-            
+
                     let option: u32 = match option.trim().parse() {
                         Ok(option) => option,
                         Err(_) => {
@@ -164,129 +161,91 @@ fn h_gojūon() {
                             continue;
                         }
                     };
-            
+
                     match option {
-                        1 => {
-                            if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
-                                if !words.is_empty() {
-                                    let available_indices: Vec<usize> = (0..words.len())
-                                        .filter(|&idx| !shown_words.contains(&idx))
-                                        .collect();
-            
-                                    if available_indices.is_empty() {
-                                        println!("\nNo more words available.");
-                                        break;
-                                    }
-            
-                                    let selected_idx = available_indices
-                                        .choose(&mut rand::thread_rng())
-                                        .expect("No available indices");
-            
-                                    let word = &words[*selected_idx];
-                                    shown_words.push(*selected_idx);
-            
-                                    println!("\nRandom latin: {}", word.latin);
-            
-                                    println!("\nType 'finished' when you're ready to see the result:");
-                                    let mut input = String::new();
-                                    io::stdin().read_line(&mut input).expect("Error Reading");
-            
-                                    if input.trim() != "finished" {
-                                        println!("\nInvalid input. Try again");
-                                        continue;
-                                    }
-            
-                                    println!("\nSymbol: {}", word.symbol);
-                                    println!("Meaning: {}", word.meaning);
-                                } else {
-                                    println!("\n'vowels' vector is empty");
-                                    break;
-                                }
-                            } else {
-                                println!("\nNo 'vowels' available");
-                                break;
-                            }
-                        }
-            
-                        2 => break,
+                        1 => g_by_latin(&hiragana_data),
+                        2 => g_by_japanese(&hiragana_data),
+                        3 => break,
                         _ => {
                             println!("\nInvalid option.");
                             continue;
                         }
                     }
                 }
-            }            
+            }
 
             2 => {
-                let mut shown_words: Vec<usize> = Vec::new(); // Para mantener un registro de los índices de las palabras mostradas
-            
-                loop {
-                    println!("\n1. Word");
-                    println!("2. Gojūon Menu");
-            
-                    println!("\nEnter the option number of what you want to do:");
-                    let mut option = String::new();
-                    io::stdin().read_line(&mut option).expect("Error Reading");
-            
-                    let option: u32 = match option.trim().parse() {
-                        Ok(option) => option,
-                        Err(_) => {
-                            println!("\nInvalid option.");
-                            continue;
-                        }
-                    };
-            
-                    match option {
-                        1 => {
-                            if let Some(ref words) = hiragana_data.hiragana[1].k.as_ref() {
-                                if !words.is_empty() {
-                                    let available_indices: Vec<usize> = (0..words.len())
-                                        .filter(|&idx| !shown_words.contains(&idx))
-                                        .collect();
-            
-                                    if available_indices.is_empty() {
-                                        println!("\nNo more words available.");
-                                        break;
-                                    }
-            
-                                    let selected_idx = available_indices
-                                        .choose(&mut rand::thread_rng())
-                                        .expect("No available indices");
-            
-                                    let word = &words[*selected_idx];
-                                    shown_words.push(*selected_idx);
-            
-                                    println!("\nRandom latin: {}", word.latin);
-            
-                                    println!("\nType 'finished' when you're ready to see the result:");
-                                    let mut input = String::new();
-                                    io::stdin().read_line(&mut input).expect("Error Reading");
-            
-                                    if input.trim() != "finished" {
-                                        println!("\nInvalid input. Try again");
-                                        continue;
-                                    }
-            
-                                    println!("\nSymbol: {}", word.symbol);
-                                    println!("Meaning: {}", word.meaning);
-                                } else {
-                                    println!("\n'vowels' vector is empty");
-                                    break;
-                                }
-                            } else {
-                                println!("\nNo 'vowels' available");
-                                break;
-                            }
-                        }
-            
-                        2 => break,
-                        _ => {
-                            println!("\nInvalid option.");
-                            continue;
-                        }
-                    }
-                }
-            }            
+                // let mut shown_words: Vec<usize> = Vec::new(); // Para mantener un registro de los índices de las palabras mostradas
+
+                // loop {
+                //     println!("\n1. Word");
+                //     println!("2. Gojūon Menu");
+
+                //     println!("\nEnter the option number of what you want to do:");
+                //     let mut option = String::new();
+                //     io::stdin().read_line(&mut option).expect("Error Reading");
+
+                //     let option: u32 = match option.trim().parse() {
+                //         Ok(option) => option,
+                //         Err(_) => {
+                //             println!("\nInvalid option.");
+                //             continue;
+                //         }
+                //     };
+
+                //     match option {
+                //         1 => {
+                //             if let Some(ref words) = hiragana_data.hiragana[1].k.as_ref() {
+                //                 if !words.is_empty() {
+                //                     let available_indices: Vec<usize> = (0..words.len())
+                //                         .filter(|&idx| !shown_words.contains(&idx))
+                //                         .collect();
+
+                //                     if available_indices.is_empty() {
+                //                         println!("\nNo more words available.");
+                //                         break;
+                //                     }
+
+                //                     let selected_idx = available_indices
+                //                         .choose(&mut rand::thread_rng())
+                //                         .expect("No available indices");
+
+                //                     let word = &words[*selected_idx];
+                //                     shown_words.push(*selected_idx);
+
+                //                     println!("\nRandom latin: {}", word.latin);
+
+                //                     println!(
+                //                         "\nType 'finished' when you're ready to see the result:"
+                //                     );
+                //                     let mut input = String::new();
+                //                     io::stdin().read_line(&mut input).expect("Error Reading");
+
+                //                     if input.trim() != "finished" {
+                //                         println!("\nInvalid input. Try again");
+                //                         continue;
+                //                     }
+
+                //                     println!("\nSymbol: {}", word.symbol);
+                //                     println!("Meaning: {}", word.meaning);
+                //                 } else {
+                //                     println!("\n'vowels' vector is empty");
+                //                     break;
+                //                 }
+                //             } else {
+                //                 println!("\nNo 'vowels' available");
+                //                 break;
+                //             }
+                //         }
+
+                //         2 => break,
+                //         _ => {
+                //             println!("\nInvalid option.");
+                //             continue;
+                //         }
+                //     }
+                // }
+            }
 
             3 => {}
             4 => {}
@@ -306,17 +265,158 @@ fn h_gojūon() {
     }
 }
 
+fn g_by_latin(hiragana_data: &HiraganaData) {
+    let mut shown_words: Vec<usize> = Vec::new();
+
+    loop {
+        println!("\n1. Word");
+        println!("2. Previous Menu");
+
+        println!("\nEnter the option number of what you want to do:");
+        let mut option = String::new();
+        io::stdin().read_line(&mut option).expect("Error Reading");
+
+        let option: u32 = match option.trim().parse() {
+            Ok(option) => option,
+            Err(_) => {
+                println!("\nInvalid option.");
+                continue;
+            }
+        };
+
+        match option {
+            1 => {
+                if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
+                    if !words.is_empty() {
+                        let available_indices: Vec<usize> = (0..words.len())
+                            .filter(|&idx| !shown_words.contains(&idx))
+                            .collect();
+
+                        if available_indices.is_empty() {
+                            println!("\nNo more words available.");
+                            break;
+                        }
+
+                        let selected_idx = available_indices
+                            .choose(&mut rand::thread_rng())
+                            .expect("No available indices");
+
+                        let word = &words[*selected_idx];
+                        shown_words.push(*selected_idx);
+
+                        println!("\nRandom latin: {}", word.latin);
+
+                        println!("\nType 'finished' when you're ready to see the result:");
+                        let mut input = String::new();
+                        io::stdin().read_line(&mut input).expect("Error Reading");
+
+                        if input.trim() != "finished" {
+                            println!("\nInvalid input. Try again");
+                            continue;
+                        }
+
+                        println!("\nSymbol: {}", word.symbol);
+                        println!("Meaning: {}", word.meaning);
+                    } else {
+                        println!("\n'vowels' vector is empty");
+                        break;
+                    }
+                } else {
+                    println!("\nNo 'vowels' available");
+                    break;
+                }
+            }
+
+            2 => break,
+            _ => {
+                println!("\nInvalid option.");
+                continue;
+            }
+        }
+    }
+}
+
+fn g_by_japanese(hiragana_data: &HiraganaData) {
+    let mut shown_words: Vec<usize> = Vec::new();
+
+    loop {
+        println!("\n1. Word");
+        println!("2. Previous Menu");
+
+        println!("\nEnter the option number of what you want to do:");
+        let mut option = String::new();
+        io::stdin().read_line(&mut option).expect("Error Reading");
+
+        let option: u32 = match option.trim().parse() {
+            Ok(option) => option,
+            Err(_) => {
+                println!("\nInvalid option.");
+                continue;
+            }
+        };
+
+        match option {
+            1 => {
+                if let Some(ref words) = hiragana_data.hiragana[0].vowels.as_ref() {
+                    if !words.is_empty() {
+                        let available_indices: Vec<usize> = (0..words.len())
+                            .filter(|&idx| !shown_words.contains(&idx))
+                            .collect();
+
+                        if available_indices.is_empty() {
+                            println!("\nNo more words available.");
+                            break;
+                        }
+
+                        let selected_idx = available_indices
+                            .choose(&mut rand::thread_rng())
+                            .expect("No available indices");
+
+                        let word = &words[*selected_idx];
+                        shown_words.push(*selected_idx);
+
+                        println!("\nRandom symbol: {}", word.symbol);
+
+                        println!("\nType 'finished' when you're ready to see the result:");
+                        let mut input = String::new();
+                        io::stdin().read_line(&mut input).expect("Error Reading");
+
+                        if input.trim() != "finished" {
+                            println!("\nInvalid input. Try again");
+                            continue;
+                        }
+
+                        println!("\nLatin: {}", word.latin);
+                        println!("Meaning: {}", word.meaning);
+                    } else {
+                        println!("\n'vowels' vector is empty");
+                        break;
+                    }
+                } else {
+                    println!("\nNo 'vowels' available");
+                    break;
+                }
+            }
+
+            2 => break,
+            _ => {
+                println!("\nInvalid option.");
+                continue;
+            }
+        }
+    }
+}
+
 fn h_dakuon() {
     loop {
         println!("\n= = = = = = = = Hiragana Dakuon = = = = = = = =");
-    
+
         println!("\n1. Gojūon and g + (vowels)");
         println!("2. Gojūon and previous and z + (vowels)");
         println!("3. Gojūon and previous and d + (vowels)");
         println!("4. Gojūon and previous and b + (vowels)");
         println!("5. Gojūon and previous and p + (vowels)");
         println!("6. Hiragana Menu");
-
 
         println!("\nEnter the option number of what you want to learn:");
         let mut option = String::new();
@@ -362,7 +462,6 @@ fn h_yōon() {
         println!("10. Gojūon and Dakuon and previous and my + (vowels)");
         println!("11. Gojūon and Dakuon and previous and ry + (vowels)");
         println!("12. Hiragana Menu");
-
 
         println!("\nEnter the option number of what you want to learn:");
         let mut option = String::new();
