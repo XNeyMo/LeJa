@@ -43,9 +43,37 @@ impl LanguageData {
 
 fn main() {
     if let Some((hiragana_groups, katakana_groups, kanji_groups)) = LanguageData::run() {
-        println!("{:?}", hiragana_groups);
-        println!("{:?}", katakana_groups);
-        println!("{:?}", kanji_groups);
+        loop {
+            println!("\n= = = = = = = = Welcome to LeJa = = = = = = = =");
+
+            println!("\n1. Hiragana");
+            println!("2. Katakana");
+            println!("3. Kanji");
+            println!("4. Exit.");
+
+            println!("\nEnter the option number of what you want to practice:");
+            let mut option = String::new();
+            io::stdin().read_line(&mut option).unwrap();
+
+            let option: u32 = match option.trim().parse() {
+                Ok(option) => option,
+                Err(_) => {
+                    println!("\nInvalid option. Try again");
+                    continue;
+                }
+            };
+
+            match option {
+                1 => println!("{:?}", hiragana_groups),
+                2 => println!("{:?}", katakana_groups),
+                3 => println!("{:?}", kanji_groups),
+                4 => break,
+                _ => {
+                    println!("\nInvalid option. Try again");
+                    continue;
+                }
+            }
+        }
     } 
     
     else {
