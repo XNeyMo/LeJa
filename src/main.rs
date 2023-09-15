@@ -25,25 +25,22 @@ struct LanguageData {
 }
 
 impl LanguageData {
-    fn run() -> Option<(Vec<JapaneseGroup>, Vec<JapaneseGroup>, Vec<JapaneseGroup>)> {
+    fn run() -> Option<Self> {
         let mut file = File::open("data/words.json").ok()?;
+
         let mut contents = String::new();
         if file.read_to_string(&mut contents).is_err() {
             return None;
         }
 
-        let data: LanguageData = serde_json::from_str(&contents).ok()?;
-
-        let hiragana_groups = data.hiragana;
-        let katakana_groups = data.katakana;
-        let kanji_groups = data.kanji;
-
-        Some((hiragana_groups, katakana_groups, kanji_groups))
+        serde_json::from_str(&contents).ok()
     }
 }
 
 fn main() {
-    if let Some((hiragana_groups, katakana_groups, kanji_groups)) = LanguageData::run() {
+    if let Some(data) = LanguageData::run() {
+        let (hiragana_groups, katakana_groups, kanji_groups) = (data.hiragana, data.katakana, data.kanji);
+        
         loop {
             println!("\n= = = = = = = = Welcome to LeJa = = = = = = = =");
 
@@ -53,10 +50,7 @@ fn main() {
             println!("4. Exit.");
 
             println!("\nEnter the option number of what you want to practice:");
-            let mut option = String::new();
-            io::stdin().read_line(&mut option).unwrap();
-
-            let option: u32 = match option.trim().parse() {
+            let option: usize = match read_user_input() {
                 Ok(option) => option,
                 Err(_) => {
                     println!("\nInvalid option. Try again");
@@ -65,38 +59,11 @@ fn main() {
             };
 
             match option {
-                1 => {
-                    let practice_option = select_practice_option("Hiragana");
-
-                    if practice_option == 4 {
-                        break;
-                    }
-
-                    practice_hiragana(&hiragana_groups, practice_option);
-                }
-
-                2 => {
-                    let practice_option = select_practice_option("Katakana");
-                    
-                    if practice_option == 4 {
-                        break;
-                    }
-
-                    practice_katakana(&katakana_groups, practice_option);
-                }
-
-                3 => {
-                    let practice_option = select_practice_option("Kanji");
-                    
-                    if practice_option == 4 {
-                        break;
-                    }
-
-                    practice_kanji(&kanji_groups, practice_option);
-                }
-
+                1 => practice(&hiragana_groups, "Hiragana"),
+                2 => practice(&katakana_groups, "Katakana"),
+                3 => practice(&kanji_groups, "Kanji"),
                 4 => process::exit(0),
-                
+
                 _ => {
                     println!("\nInvalid option. Try again");
                     continue;
@@ -107,11 +74,13 @@ fn main() {
     
     else {
         eprintln!("Error: Unable to read data.");
-        std::process::exit(1);
+        process::exit(1);
     }
 }
 
-fn select_practice_option(group_name: &str) -> u32 {
+fn practice(groups: &[JapaneseGroup], group_name: &str) {
+    let group_names: Vec<&str> = groups.iter().map(|group| group.group.as_str()).collect();
+
     loop {
         println!("\n= = = = = = = = Practice {} = = = = = = = =", group_name);
 
@@ -121,10 +90,7 @@ fn select_practice_option(group_name: &str) -> u32 {
         println!("4. Exit.");
 
         println!("\nEnter the option number of how you want the word to be given to you:");
-        let mut option = String::new();
-        io::stdin().read_line(&mut option).unwrap();
-
-        let option: u32 = match option.trim().parse() {
+        let option: usize = match read_user_input() {
             Ok(option) => option,
             Err(_) => {
                 println!("\nInvalid option. Try again");
@@ -132,12 +98,75 @@ fn select_practice_option(group_name: &str) -> u32 {
             }
         };
 
-        if option >= 1 && option <= 4 {
-            return option;
-        } 
-        
-        else {
-            println!("\nInvalid option. Try again");
+        match option {
+            1 | 2 => {
+                let selected_group = select_group(&group_names, group_name);
+
+                loop {
+                    println!("\n= = = = = = = = {} Word Option = = = = = = = = =", group_name);
+
+                    println!("\n1. Get word");
+                    println!("2. Select Group");
+                    println!("3. {} Menu", group_name);
+                    println!("4. Exit.");
+
+                    println!("\nEnter the option number of what you want:");
+                    let option: usize = match read_user_input() {
+                        Ok(option) => option,
+                        Err(_) => {
+                            println!("\nInvalid option");
+                            continue;
+                        }
+                    };
+
+                    match option {
+                        1 => {
+                            if let Some(word) = select_random_word(groups, selected_group) {
+                                if option == 1 {
+                                    println!("\nWhat's the symbol of '{}' word", word.latin);
+                                } else {
+                                    println!("\nWhat's the Latin of '{}' symbol", word.symbol);
+                                }
+
+                                println!("\nPress 'Enter' when you're done:");
+                                let mut input = String::new();
+                                io::stdin().read_line(&mut input).unwrap();
+
+                                if option == 1 {
+                                    println!("Symbol: {}", word.symbol);
+                                    println!("Meaning: {}", word.meaning);
+                                } else {
+                                    println!("Latin: {}", word.latin);
+                                    println!("Meaning: {}", word.meaning);
+                                }
+                            } else {
+                                println!("\nNo words in the selected group.");
+                            }
+                        }
+
+                        2 => {
+                            select_group(&group_names, group_name);
+                        }
+
+                        3 => {
+                            practice(groups, group_name);
+                        }
+
+                        4 => process::exit(0),
+                        _ => {
+                            println!("\nInvalid option");
+                            continue;
+                        }
+                    }
+                }
+            }
+
+            3 => {
+                main();
+            }
+
+            4 => process::exit(0),
+            _ => println!("\nInvalid option. Try again"),
         }
     }
 }
@@ -151,13 +180,10 @@ fn select_group<'a>(group_names: &'a Vec<&'a str>, name: &'a str) -> &'a str {
         }
 
         println!("\nEnter the number of the group you want to practice:");
-        let mut option = String::new();
-        io::stdin().read_line(&mut option).unwrap();
-
-        let option: usize = match option.trim().parse() {
+        let option: usize = match read_user_input() {
             Ok(option) => option,
             Err(_) => {
-                println!("\nInvalid option. Try again");
+                println!("\nInvalid option");
                 continue;
             }
         };
@@ -172,7 +198,7 @@ fn select_group<'a>(group_names: &'a Vec<&'a str>, name: &'a str) -> &'a str {
     }
 }
 
-fn select_random_word<'a>(groups: &'a Vec<JapaneseGroup>, group_name: &'a str) -> Option<&'a Word> {
+fn select_random_word<'a>(groups: &'a [JapaneseGroup], group_name: &'a str) -> Option<&'a Word> {
     let group = groups.iter().find(|group| group.group == group_name)?;
 
     let words = &group.words;
@@ -184,251 +210,8 @@ fn select_random_word<'a>(groups: &'a Vec<JapaneseGroup>, group_name: &'a str) -
     Some(random_word)
 }
 
-fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32) {
-    let group_names: Vec<&str> = hiragana_groups.iter().map(|group| group.group.as_str()).collect();
-
-    match practice_option {
-        1 | 2 => {
-            let selected_group = select_group(&group_names, "Hiragana");
-
-            loop {
-                println!("\n= = = = = = = = Hiragana Word Option = = = = = = = =");
-
-                println!("\n1. Get word");
-                println!("2. Select Group");
-                println!("3. Hiragana Menu");
-
-                println!("\nEnter the option number of what you want:");
-                let mut option = String::new();
-                io::stdin().read_line(&mut option).unwrap();
-
-                let option: u32 = match option.trim().parse() {
-                    Ok(option) => option,
-                    Err(_) => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                };
-
-                match option {
-                    1 => {
-                        if let Some(word) = select_random_word(hiragana_groups, selected_group) {
-                            if practice_option == 1 {
-                                println!("\nWhat's the symbol of '{}' word", word.latin);
-                            } 
-                                
-                            else {
-                                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
-                            }
-            
-                            println!("\nPress 'Enter' when you're done:");
-                            let mut input = String::new();
-                            io::stdin().read_line(&mut input).unwrap();
-            
-                            if practice_option == 1 {
-                                println!("Symbol: {}", word.symbol);
-                                println!("Meaning: {}", word.meaning);
-                            } 
-                            
-                            else {
-                                println!("Latin: {}", word.latin);
-                                println!("Meaning: {}", word.meaning);
-                            }
-                        }
-                            
-                        else {
-                            println!("\nNo words in the selected group.");
-                        }
-                    }
-
-                    2 => {
-                        select_group(&group_names, "Hiragana");
-                    }
-
-                    3 => {
-                        let practice_option = select_practice_option("Hiragana");
-                        practice_hiragana(&hiragana_groups, practice_option);
-                    }
-
-                    _ => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                }
-            }
-        }
-
-        3 => {
-            main();
-        }
-
-        4 => process::exit(0),
-        _ => println!("\nInvalid option. Try again"),
-    }
-}
-
-fn practice_katakana(katakana_groups: &Vec<JapaneseGroup>, practice_option: u32) {
-    let group_names: Vec<&str> = katakana_groups.iter().map(|group| group.group.as_str()).collect();
-
-    match practice_option {
-        1 | 2 => {
-            let selected_group = select_group(&group_names, "Katakana");
-
-            loop {
-                println!("\n= = = = = = = = Katakana Word Option = = = = = = = =");
-
-                println!("\n1. Get word");
-                println!("2. Select Group");
-                println!("3. Katakana Menu");
-
-                println!("\nEnter the option number of what you want:");
-                let mut option = String::new();
-                io::stdin().read_line(&mut option).unwrap();
-
-                let option: u32 = match option.trim().parse() {
-                    Ok(option) => option,
-                    Err(_) => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                };
-
-                match option {
-                    1 => {
-                        if let Some(word) = select_random_word(katakana_groups, selected_group) {
-                            if practice_option == 1 {
-                                println!("\nWhat's the symbol of '{}' word", word.latin);
-                            } 
-                                
-                            else {
-                                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
-                            }
-            
-                            println!("\nPress 'Enter' when you're done:");
-                            let mut input = String::new();
-                            io::stdin().read_line(&mut input).unwrap();
-            
-                            if practice_option == 1 {
-                                println!("Symbol: {}", word.symbol);
-                                println!("Meaning: {}", word.meaning);
-                            } 
-                            
-                            else {
-                                println!("Latin: {}", word.latin);
-                                println!("Meaning: {}", word.meaning);
-                            }
-                        }
-                            
-                        else {
-                            println!("\nNo words in the selected group.");
-                        }
-                    }
-
-                    2 => {
-                        select_group(&group_names, "Katakana");
-                    }
-
-                    3 => {
-                        let practice_option = select_practice_option("Katakana");
-                        practice_katakana(&katakana_groups, practice_option);
-                    }
-
-                    _ => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                }
-            }
-        }
-
-        3 => {
-            main();
-        }
-
-        4 => process::exit(0),
-        _ => println!("\nInvalid option. Try again"),
-    }
-}
-
-fn practice_kanji(kanji_groups: &Vec<JapaneseGroup>, practice_option: u32) {
-    let group_names: Vec<&str> = kanji_groups.iter().map(|group| group.group.as_str()).collect();
-
-    match practice_option {
-        1 | 2 => {
-            let selected_group = select_group(&group_names, "Kanji");
-
-            loop {
-                println!("\n= = = = = = = = Kanji Word Option = = = = = = = =");
-
-                println!("\n1. Get word");
-                println!("2. Select Group");
-                println!("3. Kanji Menu");
-
-                println!("\nEnter the option number of what you want:");
-                let mut option = String::new();
-                io::stdin().read_line(&mut option).unwrap();
-
-                let option: u32 = match option.trim().parse() {
-                    Ok(option) => option,
-                    Err(_) => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                };
-
-                match option {
-                    1 => {
-                        if let Some(word) = select_random_word(kanji_groups, selected_group) {
-                            if practice_option == 1 {
-                                println!("\nWhat's the symbol of '{}' word", word.latin);
-                            } 
-                                
-                            else {
-                                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
-                            }
-            
-                            println!("\nPress 'Enter' when you're done:");
-                            let mut input = String::new();
-                            io::stdin().read_line(&mut input).unwrap();
-            
-                            if practice_option == 1 {
-                                println!("Symbol: {}", word.symbol);
-                                println!("Meaning: {}", word.meaning);
-                            } 
-                            
-                            else {
-                                println!("Latin: {}", word.latin);
-                                println!("Meaning: {}", word.meaning);
-                            }
-                        }
-                            
-                        else {
-                            println!("\nNo words in the selected group.");
-                        }
-                    }
-
-                    2 => {
-                        select_group(&group_names, "Kanji");
-                    }
-
-                    3 => {
-                        let practice_option = select_practice_option("Kanji");
-                        practice_kanji(&kanji_groups, practice_option);
-                    }
-
-                    _ => {
-                        println!("\nInvalid option");
-                        continue;
-                    }
-                }
-            }
-        }
-
-        3 => {
-            main();
-        }
-
-        4 => process::exit(0),
-        _ => println!("\nInvalid option. Try again"),
-    }
+fn read_user_input() -> Result<usize, std::num::ParseIntError> {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    input.trim().parse()
 }
