@@ -268,7 +268,86 @@ fn practice_hiragana(hiragana_groups: &Vec<JapaneseGroup>, practice_option: u32)
 }
 
 fn practice_katakana(katakana_groups: &Vec<JapaneseGroup>, practice_option: u32) {
-    println!("\nKatakana");
+    let group_names: Vec<&str> = katakana_groups.iter().map(|group| group.group.as_str()).collect();
+
+    match practice_option {
+        1 | 2 => {
+            let selected_group = select_group(&group_names, "Katakana");
+
+            loop {
+                println!("\n= = = = = = = = Katakana Word Option = = = = = = = =");
+
+                println!("\n1. Get word");
+                println!("2. Select Group");
+                println!("3. Katakana Menu");
+
+                println!("\nEnter the option number of what you want:");
+                let mut option = String::new();
+                io::stdin().read_line(&mut option).unwrap();
+
+                let option: u32 = match option.trim().parse() {
+                    Ok(option) => option,
+                    Err(_) => {
+                        println!("\nInvalid option");
+                        continue;
+                    }
+                };
+
+                match option {
+                    1 => {
+                        if let Some(word) = select_random_word(katakana_groups, selected_group) {
+                            if practice_option == 1 {
+                                println!("\nWhat's the symbol of '{}' word", word.latin);
+                            } 
+                                
+                            else {
+                                println!("\nWhat's the Latin of '{}' symbol", word.symbol);
+                            }
+            
+                            println!("\nPress 'Enter' when you're done:");
+                            let mut input = String::new();
+                            io::stdin().read_line(&mut input).unwrap();
+            
+                            if practice_option == 1 {
+                                println!("Symbol: {}", word.symbol);
+                                println!("Meaning: {}", word.meaning);
+                            } 
+                            
+                            else {
+                                println!("Latin: {}", word.latin);
+                                println!("Meaning: {}", word.meaning);
+                            }
+                        }
+                            
+                        else {
+                            println!("\nNo words in the selected group.");
+                        }
+                    }
+
+                    2 => {
+                        select_group(&group_names, "Katakana");
+                    }
+
+                    3 => {
+                        let practice_option = select_practice_option("Katakana");
+                        practice_katakana(&katakana_groups, practice_option);
+                    }
+
+                    _ => {
+                        println!("\nInvalid option");
+                        continue;
+                    }
+                }
+            }
+        }
+
+        3 => {
+            main();
+        }
+
+        4 => {}
+        _ => println!("\nInvalid option. Try again"),
+    }
 }
 
 fn practice_kanji(kanji_groups: &Vec<JapaneseGroup>, practice_option: u32) {
