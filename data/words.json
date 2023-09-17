@@ -109,9 +109,69 @@
             "group": "S/Z and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "kasa",
+                    "character": "かさ",
+                    "meaning": "Umbrella"
+                },
+                {
+                    "latin": "shika",
+                    "character": "しか",
+                    "meaning": "Deer"
+                },
+                {
+                    "latin": "shio",
+                    "character": "しお",
+                    "meaning": "Salt"
+                },
+                {
+                    "latin": "ushi",
+                    "character": "うし",
+                    "meaning": "Cow"
+                },
+                {
+                    "latin": "sake",
+                    "character": "さけ",
+                    "meaning": "Alcohol"
+                },
+                {
+                    "latin": "sekai",
+                    "character": "せかい",
+                    "meaning": "World"
+                },
+                {
+                    "latin": "ashi",
+                    "character": "あし",
+                    "meaning": "Legs"
+                },
+                {
+                    "latin": "isu",
+                    "character": "いす",
+                    "meaning": "Chair"
+                },
+                {
+                    "latin": "asoko",
+                    "character": "あそこ",
+                    "meaning": "Over There"
+                },
+                {
+                    "latin": "sukoshi",
+                    "character": "すこし",
+                    "meaning": "A Little"
+                },
+                {
+                    "latin": "kaze",
+                    "character": "かぜ",
+                    "meaning": "Wind"
+                },
+                {
+                    "latin": "aji",
+                    "character": "あじ",
+                    "meaning": "Taste"
+                },
+                {
+                    "latin": "kazoku",
+                    "character": "かぞく",
+                    "meaning": "Family"
                 }
             ]
         },
