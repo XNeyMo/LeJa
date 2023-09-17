@@ -179,9 +179,89 @@
             "group": "T/D and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "shita",
+                    "character": "した",
+                    "meaning": "Down"
+                },
+                {
+                    "latin": "ichi",
+                    "character": "いち",
+                    "meaning": "One"
+                },
+                {
+                    "latin": "katachi",
+                    "character": "かたち",
+                    "meaning": "Shape"
+                },
+                {
+                    "latin": "kutsu",
+                    "character": "くつ",
+                    "meaning": "Shoes"
+                },
+                {
+                    "latin": "itoko",
+                    "character": "いとこ",
+                    "meaning": "Cousin"
+                },
+                {
+                    "latin": "tokei",
+                    "character": "とけい",
+                    "meaning": "Clock"
+                },
+                {
+                    "latin": "tsukue",
+                    "character": "つくえ",
+                    "meaning": "Desk"
+                },
+                {
+                    "latin": "tsuchi",
+                    "character": "つち",
+                    "meaning": "Earth"
+                },
+                {
+                    "latin": "takai",
+                    "character": "たかい",
+                    "meaning": "Expensive"
+                },
+                {
+                    "latin": "seito",
+                    "character": "せいと",
+                    "meaning": "Student"
+                },
+                {
+                    "latin": "chiisai",
+                    "character": "ちいさい",
+                    "meaning": "Small"
+                },
+                {
+                    "latin": "otoko",
+                    "character": "おとこ",
+                    "meaning": "Man"
+                },
+                {
+                    "latin": "tsuduki",
+                    "character": "つづき",
+                    "meaning": "Continued"
+                },
+                {
+                    "latin": "deguchi",
+                    "character": "でぐち",
+                    "meaning": "Exit"
+                },
+                {
+                    "latin": "daigaku",
+                    "character": "だいがく",
+                    "meaning": "University - Collage"
+                },
+                {
+                    "latin": "ude",
+                    "character": "うで",
+                    "meaning": "Arm"
+                },
+                {
+                    "latin": "udedokei",
+                    "character": "うでどけい",
+                    "meaning": "Wristwatch"
                 }
             ]
         },
