@@ -269,9 +269,79 @@
             "group": "N and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "kanai",
+                    "character": "かない",
+                    "meaning": "Wife"
+                },
+                {
+                    "latin": "nishi",
+                    "character": "にし",
+                    "meaning": "West"
+                },
+                {
+                    "latin": "shinu",
+                    "character": "しぬ",
+                    "meaning": "Die"
+                },
+                {
+                    "latin": "inu",
+                    "character": "いぬ",
+                    "meaning": "Dog"
+                },
+                {
+                    "latin": "neko",
+                    "character": "ねこ",
+                    "meaning": "Cat"
+                },
+                {
+                    "latin": "okane",
+                    "character": "おかね",
+                    "meaning": "Money"
+                },
+                {
+                    "latin": "nou",
+                    "character": "のう",
+                    "meaning": "Brain"
+                },
+                {
+                    "latin": "natsu",
+                    "character": "なつ",
+                    "meaning": "Summer"
+                },
+                {
+                    "latin": "anata",
+                    "character": "あなた",
+                    "meaning": "You"
+                },
+                {
+                    "latin": "kuni",
+                    "character": "くに",
+                    "meaning": "Country"
+                },
+                {
+                    "latin": "nana",
+                    "character": "なな",
+                    "meaning": "Seven"
+                },
+                {
+                    "latin": "nioi",
+                    "character": "におい",
+                    "meaning": "Smell"
+                },
+                {
+                    "latin": "nashi",
+                    "character": "なし",
+                    "meaning": "Nashi (Type of pear)"
+                },
+                {
+                    "latin": "oni",
+                    "character": "おに",
+                    "meaning": "Demon"
+                },
+                {
+                    "latin": "sakana",
+                    "character": "さかな",
+                    "meaning": "Fish"
                 }
             ]
         },
