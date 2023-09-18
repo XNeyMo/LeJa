@@ -123,7 +123,7 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
                         1 => {
                             if let Some(word) = select_random_word(groups, selected_group) {
                                 if option_word == 1 {
-                                    println!("\nWhat's the symbol of '{}' word", word.latin);
+                                    println!("\nWhat's the character of '{}' word", word.latin);
                                 } else {
                                     println!("\nWhat's the Latin of '{}' symbol", word.character);
                                 }
@@ -139,7 +139,7 @@ fn practice(groups: &[JapaneseGroup], group_name: &str) {
                                 let input = input.trim().to_string();
 
                                 if option_word == 1 {
-                                    println!("\nSymbol: {}", word.character);
+                                    println!("\nCharacter: {}", word.character);
                                     println!("Meaning: {}", word.meaning);
                                 } else {
                                     if input == word.latin {
