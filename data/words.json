@@ -349,9 +349,89 @@
             "group": "H/B/P and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "hito",
+                    "character": "ひと",
+                    "meaning": "Person"
+                },
+                {
+                    "latin": "fune",
+                    "character": "ふね",
+                    "meaning": "Ship"
+                },
+                {
+                    "latin": "heishi",
+                    "character": "へいし",
+                    "meaning": "Soldier"
+                },
+                {
+                    "latin": "hoshi",
+                    "character": "ほし",
+                    "meaning": "Star"
+                },
+                {
+                    "latin": "fukai",
+                    "character": "ふかい",
+                    "meaning": "Deep"
+                },
+                {
+                    "latin": "hikouki",
+                    "character": "ひこうき",
+                    "meaning": "Airplane"
+                },
+                {
+                    "latin": "futoi",
+                    "character": "ふとい",
+                    "meaning": "Thick"
+                },
+                {
+                    "latin": "hato",
+                    "character": "はと",
+                    "meaning": "Pigeon"
+                },
+                {
+                    "latin": "hashi",
+                    "character": "はし",
+                    "meaning": "Bridge"
+                },
+                {
+                    "latin": "budou",
+                    "character": "ぶどう",
+                    "meaning": "Grapes"
+                },
+                {
+                    "latin": "kabe",
+                    "character": "かべ",
+                    "meaning": "Wall"
+                },
+                {
+                    "latin": "boushi",
+                    "character": "ぼうし",
+                    "meaning": "Hat"
+                },
+                {
+                    "latin": "hebi",
+                    "character": "へび",
+                    "meaning": "Snake"
+                },
+                {
+                    "latin": "buta",
+                    "character": "ぶた",
+                    "meaning": "Pig"
+                },
+                {
+                    "latin": "shinbun",
+                    "character": "しんぶん",
+                    "meaning": "Newspaper"
+                },
+                {
+                    "latin": "kitsupu",
+                    "character": "きっぷ",
+                    "meaning": "Ticket"
+                },
+                {
+                    "latin": "shitsupo",
+                    "character": "しっぽ",
+                    "meaning": "Tail"
                 }
             ]
         },
