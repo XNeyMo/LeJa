@@ -439,9 +439,79 @@
             "group": "M and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "nimotsu",
+                    "character": "にもつ",
+                    "meaning": "Luggage"
+                },
+                {
+                    "latin": "uma",
+                    "character": "うま",
+                    "meaning": "Horse"
+                },
+                {
+                    "latin": "umi",
+                    "character": "うみ",
+                    "meaning": "Ocean"
+                },
+                {
+                    "latin": "ima",
+                    "character": "いま",
+                    "meaning": "Now"
+                },
+                {
+                    "latin": "mukashi",
+                    "character": "むかし",
+                    "meaning": "Long Ago"
+                },
+                {
+                    "latin": "kome",
+                    "character": "こめ",
+                    "meaning": "Rice"
+                },
+                {
+                    "latin": "hasami",
+                    "character": "はさみ",
+                    "meaning": "Scissors"
+                },
+                {
+                    "latin": "nomimono",
+                    "character": "のみもの",
+                    "meaning": "Drink"
+                },
+                {
+                    "latin": "namae",
+                    "character": "なまえ",
+                    "meaning": "Name"
+                },
+                {
+                    "latin": "mokuteki",
+                    "character": "もくてき",
+                    "meaning": "Purpose"
+                },
+                {
+                    "latin": "mushi",
+                    "character": "むし",
+                    "meaning": "Insect"
+                },
+                {
+                    "latin": "kame",
+                    "character": "かめ",
+                    "meaning": "Turtle"
+                },
+                {
+                    "latin": "maiasa",
+                    "character": "まいあさ",
+                    "meaning": "Every Morning"
+                },
+                {
+                    "latin": "mae",
+                    "character": "まえ",
+                    "meaning": "Before"
+                },
+                {
+                    "latin": "mumei",
+                    "character": "むめい",
+                    "meaning": "Anonymous"
                 }
             ]
         },
