@@ -519,9 +519,74 @@
             "group": "Y and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "yasui",
+                    "character": "やすい",
+                    "meaning": "Cheap"
+                },
+                {
+                    "latin": "yama",
+                    "character": "やま",
+                    "meaning": "Mountain"
+                },
+                {
+                    "latin": "sekiyu",
+                    "character": "せきゆ",
+                    "meaning": "Oil"
+                },
+                {
+                    "latin": "yaoya",
+                    "character": "やおや",
+                    "meaning": "Greengrocer"
+                },
+                {
+                    "latin": "fuyu",
+                    "character": "ふゆ",
+                    "meaning": "Winter"
+                },
+                {
+                    "latin": "yuki",
+                    "character": "ゆき",
+                    "meaning": "Snow"
+                },
+                {
+                    "latin": "yukiguni",
+                    "character": "ゆきぐに",
+                    "meaning": "Yukiguni (Snow Country - Novel by Yasunari Kawabata)"
+                },
+                {
+                    "latin": "yamiyo",
+                    "character": "やみよ",
+                    "meaning": "Dark Night"
+                },
+                {
+                    "latin": "youkozo!",
+                    "character": "ようこそ！",
+                    "meaning": "Welcome!"
+                },
+                {
+                    "latin": "heya",
+                    "character": "へや",
+                    "meaning": "Room"
+                },
+                {
+                    "latin": "yakusoku",
+                    "character": "やくそく",
+                    "meaning": "Promise"
+                },
+                {
+                    "latin": "yume",
+                    "character": "ゆめ",
+                    "meaning": "Dream"
+                },
+                {
+                    "latin": "yoake",
+                    "character": "よあけ",
+                    "meaning": "Dawn - Daybreak"
+                },
+                {
+                    "latin": "yotei",
+                    "character": "よてい",
+                    "meaning": "Schedule - Plan - Program"
                 }
             ]
         },
