@@ -594,9 +594,74 @@
             "group": "R and Previous",
             "words": [
                 {
-                    "latin": "",
-                    "character": "",
-                    "meaning": ""
+                    "latin": "atarashii",
+                    "character": "あたらしい",
+                    "meaning": "New"
+                },
+                {
+                    "latin": "hari",
+                    "character": "はり",
+                    "meaning": "Needle"
+                },
+                {
+                    "latin": "shiro",
+                    "character": "しろ",
+                    "meaning": "White"
+                },
+                {
+                    "latin": "kore",
+                    "character": "これ",
+                    "meaning": "This"
+                },
+                {
+                    "latin": "mori",
+                    "character": "もり",
+                    "meaning": "Forest"
+                },
+                {
+                    "latin": "karui",
+                    "character": "かるい",
+                    "meaning": "Light (Adjetive)"
+                },
+                {
+                    "latin": "Hiroi",
+                    "character": "ひろい",
+                    "meaning": "Wide"
+                },
+                {
+                    "latin": "Tonari",
+                    "character": "となり",
+                    "meaning": "Next To/Door"
+                },
+                {
+                    "latin": "sakura",
+                    "character": "さくら",
+                    "meaning": "Sakura (Cherry Blossoms)"
+                },
+                {
+                    "latin": "kusuri",
+                    "character": "くすり",
+                    "meaning": "Medicine"
+                },
+                {
+                    "latin": "rekishi",
+                    "character": "れきし",
+                    "meaning": "History"
+                },
+                {
+                    "latin": "rousoku",
+                    "character": "ろうそく",
+                    "meaning": "Candle"
+                },
+                {
+                    "latin": "kuruma",
+                    "character": "くるま",
+                    "meaning": "Car"
+                },
+                {
+                    "latin": "rouka",
+                    "character": "ろうか",
+                    "meaning": "Corridor"
                 }
             ]
         },
