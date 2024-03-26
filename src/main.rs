@@ -1,27 +1,26 @@
 #![allow(warnings)]
 
-use serde::Deserialize;
-
+use serde::{Deserialize, Serialize};
 use std::fs::File;
-use std::path::Path;
+use std::io::Read;
 
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
+#[derive(Debug, Serialize, Deserialize)]
 struct Char {
     level: u8,
     japan: String,
     latin: String,
 }
 
-#[derive(Debug, Deserialize)]
-#[serde(rename_all = "camelCase")]
-struct Kana {
-    chars: Vec<Char>,
-}
-
 fn main() {
-    let json_file_path = Path::new("./data/chars.json");
-    let file = File::open(json_file_path).expect("file not found");
+    let mut file = File::open("./data/chars.json").expect("JSON file not found");
+    let mut data = String::new();
+    file.read_to_string(&mut data)
+        .expect("Cannot read the file");
 
-    let japanese: Vec<Kana> = serde_json::from_reader(file).unwrap();
+    let chars: serde_json::Value = serde_json::from_str(&data).expect("Error parsing JSON");
+
+    let hiragana: Vec<Char> =
+        serde_json::from_value(chars["hiragana"].clone()).expect("Error Hiragana");
+    let katakana: Vec<Char> =
+        serde_json::from_value(chars["katakana"].clone()).expect("Error Katakana");
 }
